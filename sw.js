@@ -16,7 +16,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   ({ url }) => {
-    return /.*.(js|css|ttf)/.test(url.href);
+    return /.*.(js|css|ttf)$/gm.test(url.href);
   },
   workbox.strategies.cacheFirst({
     cacheName: "bilibili-cover-editor-core",
